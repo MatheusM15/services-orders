@@ -1,10 +1,7 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - serviceorders
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   deploy:
