@@ -1,0 +1,6 @@
+@TEACHCHALLENGE.PEDIDO.API_HostAddress = http://localhost:5294
+
+GET {{TEACHCHALLENGE.PEDIDO.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
