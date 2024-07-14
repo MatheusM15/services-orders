@@ -1,4 +1,4 @@
-name: CD-AZURE
+name: CD
 
 on:
   workflow_call:
