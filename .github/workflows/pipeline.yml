@@ -1,0 +1,22 @@
+name: CI/CD - pipeline
+
+on:
+  push:
+    branches:
+      ['*'] 
+  pull_request:
+    branches:
+      ['*'] 
+
+jobs:
+  CI:
+     uses: ./.github/workflows/CI.yml
+     secrets: inherit
+
+  CD:
+    needs: CI
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    uses: ./.github/workflows/CD.yml
+    with:
+      secrets: inherit
+
