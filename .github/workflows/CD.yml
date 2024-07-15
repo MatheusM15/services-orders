@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -53,7 +53,7 @@ jobs:
           docker-compose up -d
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'  # Adjust version if needed
 
@@ -93,18 +93,18 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu'  # Alternative distribution options are available.
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Cache SonarCloud packages
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~\sonar\cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
       - name: Cache SonarCloud scanner
         id: cache-sonar-scanner
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
@@ -153,3 +153,7 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E92E76AAA30F409A8E891C0640C87106 }}
 
       - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'serviceorders'  # Nome do seu aplicativo Web Azure
+          package: ${{ github.workspace }}/myapp
