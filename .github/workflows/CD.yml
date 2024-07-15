@@ -67,6 +67,9 @@ jobs:
         run: |
           dotnet test --configuration Release --logger trx --results-directory TestResults --collect:"XPlat Code Coverage"
         
+      - name: Install reportgenerator
+        run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
       - name: Convert coverage report to cobertura format
         run: |
           reportgenerator "-reports:TestResults/coverage.cobertura.xml" "-targetdir:coveragereport" "-reporttypes:cobertura"
@@ -108,6 +111,45 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar-scanner
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-        shell: powershell
+        shell: pwsh
         run: |
-          New-Item -Path .
+          New-Item -Path .\.sonar\scanner -ItemType Directory
+          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+      - name: Download code coverage report
+        uses: actions/download-artifact@v4
+        with:
+          name: code-coverage-report
+          path: coveragereport
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        shell: pwsh
+        run: |
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"MatheusM15_services-orders" /o:"matheusm15" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="coveragereport/coverage.cobertura.xml"
+          dotnet build --configuration Release
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+
+  deploy:
+    runs-on: windows-latest
+    needs: sonar
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    permissions:
+      id-token: write  # This is required for requesting the JWT
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: .net-app
+      
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C2762B39C4CD4816BC7AF1FAFFFB4BAF }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_48CE963E640D4D319FD58FD51BD2CAB4 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E92E76AAA30F409A8E891C0640C87106 }}
+
+      - name: Deploy to Azure Web App
