@@ -42,9 +42,13 @@ jobs:
 
       - name: List TestResults directory (Debug Step)
         run: ls TestResults/**/*
-      
+
       - name: Install reportgenerator
         run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
+      - name: Verify coverage report files
+        run: |
+          find TestResults -name "coverage.opencover.xml"
 
       - name: Convert coverage report to cobertura format
         run: |
