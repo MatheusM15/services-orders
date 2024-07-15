@@ -63,12 +63,16 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release
 
-      - name: Test with coverage
-        run: |
-          dotnet test --configuration Release --logger trx --results-directory TestResults /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=coverage.lcov
-        
       - name: Tear down Docker Compose services
         run: docker-compose down
+
+      - name: Upload coverage report to SonarCloud
+        uses: sonarsource/sonarcloud-github-action@v2
+        with:
+          organization: "matheusm15"
+          token: ${{ secrets.SONAR_TOKEN }}
+          projectKey: "MatheusM15_services-orders"
+          file: "coverage.lcov"
 
   sonar:
     name: Build and analyze
@@ -80,15 +84,18 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu'  # Alternative distribution options are available.
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
           path: ~\sonar\cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
+
       - name: Cache SonarCloud scanner
         id: cache-sonar-scanner
         uses: actions/cache@v3
@@ -96,21 +103,23 @@ jobs:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
+
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: pwsh
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: pwsh
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"MatheusM15_services-orders" /o:"matheusm15" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"MatheusM15_services-orders" /o:"matheusm15" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.coverage.exclusions="**/*.Tests/**"
           dotnet build --configuration Release
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.coverageReportPaths="coverage.lcov"
 
   deploy:
     runs-on: windows-latest
