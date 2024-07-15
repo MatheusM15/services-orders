@@ -69,7 +69,8 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu'  # Alternative distribution options are available.
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Cache SonarCloud packages
@@ -118,4 +119,17 @@ jobs:
       - name: Download artifact from test job
         uses: actions/download-artifact@v4
         with:
-         
+          name: .net-app
+      
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C2762B39C4CD4816BC7AF1FAFFFB4BAF }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_48CE963E640D4D319FD58FD51BD2CAB4 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E92E76AAA30F409A8E891C0640C87106 }}
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'serviceorders'  # Nome do seu aplicativo Web Azure
+          package: ${{ github.workspace }}/myapp
