@@ -63,8 +63,9 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release
 
-      - name: Test
-        run: dotnet test --configuration Release --logger trx --results-directory TestResults
+      - name: Test with coverage
+        run: |
+          dotnet test --configuration Release --logger trx --results-directory TestResults /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=coverage.lcov
         
       - name: Tear down Docker Compose services
         run: docker-compose down
