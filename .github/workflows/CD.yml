@@ -7,35 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: windows-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.x'
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
-
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{github.workspace}}/myapp
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
-        with:
-          name: .net-app
-          path: ${{github.workspace}}/myapp
-
   test:
     runs-on: ubuntu-latest
-    needs: build
     services:
       docker:
         image: docker:19.03.12
@@ -67,12 +40,15 @@ jobs:
         run: |
           dotnet test --configuration Release --logger trx --results-directory TestResults --collect:"XPlat Code Coverage"
 
+      - name: List TestResults directory (Debug Step)
+        run: ls TestResults/**/*
+      
       - name: Install reportgenerator
         run: dotnet tool install --global dotnet-reportgenerator-globaltool
 
       - name: Convert coverage report to cobertura format
         run: |
-          reportgenerator "-reports:TestResults/**/coverage.cobertura.xml" "-targetdir:coveragereport" "-reporttypes:cobertura"
+          reportgenerator "-reports:TestResults/**/coverage.opencover.xml" "-targetdir:coveragereport" "-reporttypes:cobertura"
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
@@ -149,11 +125,4 @@ jobs:
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C2762B39C4CD4816BC7AF1FAFFFB4BAF }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_48CE963E640D4D319FD58FD51BD2CAB4 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E92E76AAA30F409A8E891C0640C87106 }}
-
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'serviceorders'  # Nome do seu aplicativo Web Azure
-          package: ${{ github.workspace }}/myapp
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_48
