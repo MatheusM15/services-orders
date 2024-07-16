@@ -9,7 +9,7 @@ on:
 jobs:
   sonar:
     name: Build and analyze
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     services:
       docker:
         image: docker:19.03.12
