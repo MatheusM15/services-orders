@@ -7058,11 +7058,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\service-orders\\tests\\APPLICATION\\APPLICATION-TEST.csproj",
+      "projectUniqueName": "D:\\myprojectserviceorders\\tests\\APPLICATION\\APPLICATION-TEST.csproj",
       "projectName": "APPLICATION-TEST",
-      "projectPath": "D:\\service-orders\\tests\\APPLICATION\\APPLICATION-TEST.csproj",
+      "projectPath": "D:\\myprojectserviceorders\\tests\\APPLICATION\\APPLICATION-TEST.csproj",
       "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-      "outputPath": "D:\\service-orders\\tests\\APPLICATION\\obj\\",
+      "outputPath": "D:\\myprojectserviceorders\\tests\\APPLICATION\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7084,11 +7084,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\service-orders\\src\\API\\API.csproj": {
-              "projectPath": "D:\\service-orders\\src\\API\\API.csproj"
+            "D:\\myprojectserviceorders\\src\\API\\API.csproj": {
+              "projectPath": "D:\\myprojectserviceorders\\src\\API\\API.csproj"
             },
-            "D:\\service-orders\\src\\INFRA\\INFRA.csproj": {
-              "projectPath": "D:\\service-orders\\src\\INFRA\\INFRA.csproj"
+            "D:\\myprojectserviceorders\\src\\INFRA\\INFRA.csproj": {
+              "projectPath": "D:\\myprojectserviceorders\\src\\INFRA\\INFRA.csproj"
             }
           }
         }

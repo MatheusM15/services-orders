@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\service-orders\\tests\\INFRA\\INFRA.csproj": {}
+    "D:\\myprojectserviceorders\\tests\\INFRA\\INFRA.csproj": {}
   },
   "projects": {
-    "D:\\service-orders\\tests\\INFRA\\INFRA.csproj": {
+    "D:\\myprojectserviceorders\\tests\\INFRA\\INFRA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\service-orders\\tests\\INFRA\\INFRA.csproj",
+        "projectUniqueName": "D:\\myprojectserviceorders\\tests\\INFRA\\INFRA.csproj",
         "projectName": "INFRA",
-        "projectPath": "D:\\service-orders\\tests\\INFRA\\INFRA.csproj",
+        "projectPath": "D:\\myprojectserviceorders\\tests\\INFRA\\INFRA.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "D:\\service-orders\\tests\\INFRA\\obj\\",
+        "outputPath": "D:\\myprojectserviceorders\\tests\\INFRA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

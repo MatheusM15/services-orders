@@ -5514,11 +5514,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\service-orders\\tests\\API\\API.csproj",
+      "projectUniqueName": "D:\\myprojectserviceorders\\tests\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\service-orders\\tests\\API\\API.csproj",
+      "projectPath": "D:\\myprojectserviceorders\\tests\\API\\API.csproj",
       "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-      "outputPath": "D:\\service-orders\\tests\\API\\obj\\",
+      "outputPath": "D:\\myprojectserviceorders\\tests\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

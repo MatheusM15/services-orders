@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "INaIMWBsGTUCLCJBZsGJ1mmIL2PfAWXQRRzF/oyqUxf+AYwXLfItszAPIxWFlD+wzmpS1jv9NGf9P4AUAzlC1g==",
+  "dgSpecHash": "ErM/GYIJzPRwqj4rdcFDvFUIoRDcatr47OD8HOq+fg/v9W5U+3CxJ7bMaJbs5Ick/R3P7g9hg+XoyVJj6NM35Q==",
   "success": true,
-  "projectFilePath": "D:\\service-orders\\tests\\TEACHCHALLENGE.DOMAIN\\DOMAIN.csproj",
+  "projectFilePath": "D:\\myprojectserviceorders\\tests\\TEACHCHALLENGE.DOMAIN\\DOMAIN.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mathe\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",

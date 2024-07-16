@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D1FRjeQqZIDhW4jBzQsWUARx2QyVLTTxU2jPlCZ6Hl3+9BRS/R6PvwaG6kz0kqxg5Hiw74/EU438mHggURwJpg==",
+  "dgSpecHash": "2yLv/JMxHeR1ojO2k6b/ethnq8LjMCW03T3DDxFkRfHcRwiEmSn2WCe76dlTY9VI3FRxbtfJRe2EIZ5itW9FEg==",
   "success": true,
-  "projectFilePath": "D:\\service-orders\\tests\\INFRA\\INFRA.csproj",
+  "projectFilePath": "D:\\myprojectserviceorders\\tests\\INFRA\\INFRA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mathe\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",

@@ -22,3 +22,15 @@ D:\service-orders\src\DOMAIN\obj\Debug\net8.0\DOMAIN.dll
 D:\service-orders\src\DOMAIN\obj\Debug\net8.0\refint\DOMAIN.dll
 D:\service-orders\src\DOMAIN\obj\Debug\net8.0\DOMAIN.pdb
 D:\service-orders\src\DOMAIN\obj\Debug\net8.0\ref\DOMAIN.dll
+D:\myprojectserviceorders\src\DOMAIN\bin\Debug\net8.0\DOMAIN.deps.json
+D:\myprojectserviceorders\src\DOMAIN\bin\Debug\net8.0\DOMAIN.dll
+D:\myprojectserviceorders\src\DOMAIN\bin\Debug\net8.0\DOMAIN.pdb
+D:\myprojectserviceorders\src\DOMAIN\obj\Debug\net8.0\DOMAIN.GeneratedMSBuildEditorConfig.editorconfig
+D:\myprojectserviceorders\src\DOMAIN\obj\Debug\net8.0\DOMAIN.AssemblyInfoInputs.cache
+D:\myprojectserviceorders\src\DOMAIN\obj\Debug\net8.0\DOMAIN.AssemblyInfo.cs
+D:\myprojectserviceorders\src\DOMAIN\obj\Debug\net8.0\DOMAIN.csproj.CoreCompileInputs.cache
+D:\myprojectserviceorders\src\DOMAIN\obj\Debug\net8.0\DOMAIN.sourcelink.json
+D:\myprojectserviceorders\src\DOMAIN\obj\Debug\net8.0\DOMAIN.dll
+D:\myprojectserviceorders\src\DOMAIN\obj\Debug\net8.0\refint\DOMAIN.dll
+D:\myprojectserviceorders\src\DOMAIN\obj\Debug\net8.0\DOMAIN.pdb
+D:\myprojectserviceorders\src\DOMAIN\obj\Debug\net8.0\ref\DOMAIN.dll

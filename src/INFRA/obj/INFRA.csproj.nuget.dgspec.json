@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\service-orders\\src\\INFRA\\INFRA.csproj": {}
+    "D:\\myprojectserviceorders\\src\\INFRA\\INFRA.csproj": {}
   },
   "projects": {
-    "D:\\service-orders\\src\\DOMAIN\\DOMAIN.csproj": {
+    "D:\\myprojectserviceorders\\src\\DOMAIN\\DOMAIN.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\service-orders\\src\\DOMAIN\\DOMAIN.csproj",
+        "projectUniqueName": "D:\\myprojectserviceorders\\src\\DOMAIN\\DOMAIN.csproj",
         "projectName": "DOMAIN",
-        "projectPath": "D:\\service-orders\\src\\DOMAIN\\DOMAIN.csproj",
+        "projectPath": "D:\\myprojectserviceorders\\src\\DOMAIN\\DOMAIN.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "D:\\service-orders\\src\\DOMAIN\\obj\\",
+        "outputPath": "D:\\myprojectserviceorders\\src\\DOMAIN\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "D:\\service-orders\\src\\INFRA\\INFRA.csproj": {
+    "D:\\myprojectserviceorders\\src\\INFRA\\INFRA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\service-orders\\src\\INFRA\\INFRA.csproj",
+        "projectUniqueName": "D:\\myprojectserviceorders\\src\\INFRA\\INFRA.csproj",
         "projectName": "INFRA",
-        "projectPath": "D:\\service-orders\\src\\INFRA\\INFRA.csproj",
+        "projectPath": "D:\\myprojectserviceorders\\src\\INFRA\\INFRA.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "D:\\service-orders\\src\\INFRA\\obj\\",
+        "outputPath": "D:\\myprojectserviceorders\\src\\INFRA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -98,8 +98,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\service-orders\\src\\DOMAIN\\DOMAIN.csproj": {
-                "projectPath": "D:\\service-orders\\src\\DOMAIN\\DOMAIN.csproj"
+              "D:\\myprojectserviceorders\\src\\DOMAIN\\DOMAIN.csproj": {
+                "projectPath": "D:\\myprojectserviceorders\\src\\DOMAIN\\DOMAIN.csproj"
               }
             }
           }

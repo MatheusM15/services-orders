@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BONgozwjEUxjtfA/pmRbcfAQY0CXDAy9FMQdIQV4SYVk+ajFhAN+YdMYCAGoxpAiBosgPrzf6aQxMB+6sMAUQw==",
+  "dgSpecHash": "T5u0sKuZZ6xPlqHFXwkVf7r5QzU/fO8FH2esPjBnORHckoL4ji1JJH/AGROIqcEbqXvJWGs7zw4jCEg8RQ9L2w==",
   "success": true,
-  "projectFilePath": "D:\\service-orders\\src\\DOMAIN\\DOMAIN.csproj",
+  "projectFilePath": "D:\\myprojectserviceorders\\src\\DOMAIN\\DOMAIN.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

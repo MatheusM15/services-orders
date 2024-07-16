@@ -1033,11 +1033,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\service-orders\\src\\APPLICATION\\APPLICATION.csproj",
+      "projectUniqueName": "D:\\myprojectserviceorders\\src\\APPLICATION\\APPLICATION.csproj",
       "projectName": "APPLICATION",
-      "projectPath": "D:\\service-orders\\src\\APPLICATION\\APPLICATION.csproj",
+      "projectPath": "D:\\myprojectserviceorders\\src\\APPLICATION\\APPLICATION.csproj",
       "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-      "outputPath": "D:\\service-orders\\src\\APPLICATION\\obj\\",
+      "outputPath": "D:\\myprojectserviceorders\\src\\APPLICATION\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1059,11 +1059,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\service-orders\\src\\DOMAIN\\DOMAIN.csproj": {
-              "projectPath": "D:\\service-orders\\src\\DOMAIN\\DOMAIN.csproj"
+            "D:\\myprojectserviceorders\\src\\DOMAIN\\DOMAIN.csproj": {
+              "projectPath": "D:\\myprojectserviceorders\\src\\DOMAIN\\DOMAIN.csproj"
             },
-            "D:\\service-orders\\src\\INFRA\\INFRA.csproj": {
-              "projectPath": "D:\\service-orders\\src\\INFRA\\INFRA.csproj"
+            "D:\\myprojectserviceorders\\src\\INFRA\\INFRA.csproj": {
+              "projectPath": "D:\\myprojectserviceorders\\src\\INFRA\\INFRA.csproj"
             }
           }
         }

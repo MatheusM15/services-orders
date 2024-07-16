@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sTNzvgu9mJ1/SKG2f1Pd5Dp1jL1gz8C6x64aQWHMlRz9sliQfG+y79+zjHgyTyx+MH5UI+f0UTBuCWAr92wUzA==",
+  "dgSpecHash": "fyBU58wr9enYYDnUp2dGJBnMdnHFkU7g6DjJF01REaW9W8XBgHiXxkw6aehI+fmRPS8MPZzzmqPKQSvdUqRsoQ==",
   "success": true,
-  "projectFilePath": "D:\\service-orders\\tests\\API\\API.csproj",
+  "projectFilePath": "D:\\myprojectserviceorders\\tests\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mathe\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
